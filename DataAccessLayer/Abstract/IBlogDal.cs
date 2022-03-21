@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IBlogDal: IEntityRepository<Blog>
     {
+        public ICollection<Blog> GetAllWithCategory();
     }
 }
