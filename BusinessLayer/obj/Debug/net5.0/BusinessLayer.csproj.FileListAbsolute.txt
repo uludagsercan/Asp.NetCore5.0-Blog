@@ -15,3 +15,5 @@ C:\Users\Sercan\source\repos\MyBlogProject\BusinessLayer\obj\Debug\net5.0\Busine
 C:\Users\Sercan\source\repos\MyBlogProject\BusinessLayer\obj\Debug\net5.0\refint\BusinessLayer.dll
 C:\Users\Sercan\source\repos\MyBlogProject\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
 C:\Users\Sercan\source\repos\MyBlogProject\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
+C:\Users\Sercan\source\repos\MyBlogProject\BusinessLayer\bin\Debug\net5.0\Core.dll
+C:\Users\Sercan\source\repos\MyBlogProject\BusinessLayer\bin\Debug\net5.0\Core.pdb
