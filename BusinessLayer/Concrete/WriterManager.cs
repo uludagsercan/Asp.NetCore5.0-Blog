@@ -1,7 +1,13 @@
 ﻿using BusinessLayer.Abstract;
+using BusinessLayer.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Security.Hashing;
+using Core.Utilities.Business;
+using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,14 +30,36 @@ namespace BusinessLayer.Concrete
             _writerDal.Add(writer);
         }
 
-        public void Register(Writer writer)
+        [ValidationAspect(typeof(UserForDtoValidator))]
+        public IResult Register(UserForDto userForDto)
         {
-            byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(writer.WriterPassword,out passwordHash,out passwordSalt);
-            writer.PasswordHash = passwordHash;
-            writer.PasswordHash=passwordSalt;
-            writer.WriterStatus = true;
+            IResult result = BusinessRules.Run(IsPasswordEqual(userForDto.UserPassowrd, userForDto.UserPasswordConfimation));
+            if (result!=null)
+            {
+                return result;
+            }
+            byte[] passwordHashing, passwordSalt;
+            HashingHelper.CreatePasswordHash(userForDto.UserPassowrd,out passwordHashing,out passwordSalt);
+            var writer = new Writer
+            {
+                WriterName =userForDto.Username,
+                PasswordHash = passwordHashing,
+                PasswordSalt = passwordSalt,
+                WriterMail=userForDto.UserMail,
+                WriterImage=userForDto.UserImage
+            };
             _writerDal.Add(writer);
+            return new SuccessResult("Kullanıcı Kaydı Oluşturuldu");
+        }
+
+        private IResult IsPasswordEqual(string password, string passwordConfimation)
+        {
+            if (!password.Equals(passwordConfimation))
+            {
+                return new ErrorResult();
+            }
+            return new SuccessResult();
         }
     }
+   
 }

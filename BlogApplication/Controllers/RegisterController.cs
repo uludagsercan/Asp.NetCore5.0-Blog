@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogApplication.Controllers
@@ -14,9 +15,9 @@ namespace BlogApplication.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(Writer writer)
+        public IActionResult Index(UserForDto userForDto)
         {
-            wm.Add(writer);
+            ViewBag.Success = wm.Register(userForDto).Success;
             return RedirectToAction("Index");
         }
     }

@@ -192,9 +192,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("WriterName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WriterPassword")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("WriterStatus")
                         .HasColumnType("bit");
 
