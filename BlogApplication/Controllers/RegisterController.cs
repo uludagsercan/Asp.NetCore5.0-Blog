@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using EntityLayer.DTOs;
@@ -8,17 +9,27 @@ namespace BlogApplication.Controllers
 {
     public class RegisterController : Controller
     {
-        WriterManager wm = new WriterManager(new EfWriterDal());
-        [HttpGet]
-        public IActionResult Index()
+        IWriterService _service;
+
+        public RegisterController(IWriterService service)
         {
+            _service = service;
+        }
+
+        [HttpGet]
+        public IActionResult Index(bool success)
+        {
+            if (success)
+            {
+                ViewBag.Success = success;
+            }
             return View();
         }
         [HttpPost]
         public IActionResult Index(UserForDto userForDto)
         {
-            ViewBag.Success = wm.Register(userForDto).Success;
-            return RedirectToAction("Index");
+            var result = _service.Register(userForDto);
+            return RedirectToAction("Index",new { success=result.Success });
         }
     }
 }

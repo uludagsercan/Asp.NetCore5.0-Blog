@@ -1,3 +1,9 @@
+using BusinessLayer.ValidationRules.FluentValidation;
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
+using EntityLayer.DTOs;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +30,12 @@ namespace BlogApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IValidator<UserForDto>, UserForDtoValidator>();
+            services.AddDependenyResolvers(new ICoreModule[]
+            {
+                new CoreModule()
+            });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

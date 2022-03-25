@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9FDUAbE9sEIK056f+JTa5ukKT/I5ub4lcUXFMQLJjjFjGu3tNXLWcz++m+fMUeWJnyQEa7zQoYF1/7eTjpQCWg==",
+  "dgSpecHash": "LyMKL+/T/8rp7EORfDrx9nU7Kjwd6Vcwyn/OxrSLMuVtYG+Fw+jPpcUO308eCr212VGhnjbSuM9AxA86xnZpoQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sercan\\source\\repos\\MyBlogProject\\BlogApplication\\BlogApplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sercan\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
+    "C:\\Users\\Sercan\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
+    "C:\\Users\\Sercan\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\Sercan\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Sercan\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\Sercan\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",

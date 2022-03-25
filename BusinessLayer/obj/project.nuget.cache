@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YjVWSKKFGPKnMmX39tmQcZgS+CkXaHLHq6aQzRB3EvPv7ntWe6t7O87IgCU8zB5xJ5Q3hTk7mtwFPDWokvqoBQ==",
+  "dgSpecHash": "8cta+4/7F5QfE28nf+0sWd+D1fMZQaD8pNtQRNY3g6OFxNGHybczt9pCgzAzPVtyGqRNOmw5btM/p9vPln0ZIg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sercan\\source\\repos\\MyBlogProject\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sercan\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
+    "C:\\Users\\Sercan\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\Sercan\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Sercan\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\Sercan\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",

@@ -24,7 +24,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="exampleInputPassword1 mb-2">Şifre</label>
+                    <label id="message" for="exampleInputPassword1 mb-2">Şifre</label>
                     @Html.TextBoxFor(x=> x.UserPassowrd,new{@class="form-control", @id="exampleInputPassword1",@type="password"})
                     @*  <input type="password" class="form-control" id="password1" placeholder="" required="">*@
                 </div>
@@ -38,29 +38,39 @@
                     @Html.TextBoxFor(x=> x.UserImage,new{@class="form-control", @id="exampleInputImage",@type="text"})
                     @*  <input type="password" class="form-control" id="password2" placeholder="" required="">*@
                 </div>
-                
+
             </div>
-            
-           <button type="submit" onclick="onClick(ViewBag.Success)" class="btn btn-success submit" style="margin-top:0.5rem">Register</button>
+
+            <button type="submit"  class="btn btn-success submit" style="margin-top:0.5rem">Register</button>
             <p>
                 <br>
                 <a href="#">By clicking Signup, I agree to your terms</a>
             </p>
         }
-        
-        @if (ViewBag.Success!=null)
+
+        @if (ViewBag.Success != null)
         {
-            <p>kayıt işlemi başarılı</p>
+
+            <script>
+                successMessage(@ViewBag.Success)
+            </script>
         }
     </div>
 </div>
 
 <script>
-    function onClick(success){
-        if(success){
-            swal("Good job!", "You clicked the button!", "success");
-        }else{
-            
-        }   
-    }
+       $(document).ready(function(){
+      $("#message").click(function(){
+        alert("The paragraph was clicked.");
+      });
+    });
+
+            function successMessage(success:Boolean){
+                if(success==true)
+                {
+                    swal("Good job!", "You clicked the button!", "success");
+                }else{
+
+                }
+            }
 </script>

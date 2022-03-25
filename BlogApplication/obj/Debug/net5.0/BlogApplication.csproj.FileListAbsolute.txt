@@ -166,3 +166,6 @@ C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Cast
 C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Core.dll
 C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Core.pdb
 C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Autofac.dll
+C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\Sercan\source\repos\MyBlogProject\BlogApplication\bin\Debug\net5.0\Autofac.Extras.DynamicProxy.dll

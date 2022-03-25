@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
             _writerDal.Add(writer);
         }
 
-        [ValidationAspect(typeof(UserForDtoValidator))]
+        [ValidationAspect(typeof(UserForDtoValidator),Priority =1)]
         public IResult Register(UserForDto userForDto)
         {
             IResult result = BusinessRules.Run(IsPasswordEqual(userForDto.UserPassowrd, userForDto.UserPasswordConfimation));
@@ -54,9 +54,18 @@ namespace BusinessLayer.Concrete
 
         private IResult IsPasswordEqual(string password, string passwordConfimation)
         {
-            if (!password.Equals(passwordConfimation))
+           
+            if(!string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(passwordConfimation))
             {
-                return new ErrorResult();
+                if (!password.Equals(passwordConfimation))
+                {
+                    return new ErrorResult();
+                }
+
+            }
+            else
+            {
+                return new ErrorResult("Value must be entered");
             }
             return new SuccessResult();
         }
